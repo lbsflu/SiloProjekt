@@ -10,8 +10,7 @@ if __name__ == '__main__':
     while number < 3:
         globals()['silo_%s' % number] = Silo(number, round(random.uniform(80.00, 100.00)))
 
-        print(f"Silo Nummer: {globals()['silo_%s' % number].get_silonummer()}")
-        print(f"Silo Kapazitat: {globals()['silo_%s' % number].get_kapazitat()}")
+        print(globals()['silo_%s' % number].__str__())
         globals()['silo_%s' % number].einlagern(round(random.uniform(10.00, 80.00)))
         globals()['silo_%s' % number].einlagern(round(random.uniform(10.00, 80.00)))
         print(f"Silo Bestand: {globals()['silo_%s' % number].get_bestand()}")
@@ -27,3 +26,5 @@ if __name__ == '__main__':
     print(f" Gesamt bestand:{siloVerwaltung.get_silo_gesamt_bestand()}")
 
     print(f" Gesamt Silos:{siloVerwaltung.get_silo_total()}")
+
+
