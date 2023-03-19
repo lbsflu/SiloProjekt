@@ -1,25 +1,24 @@
+import random
 from silo import Silo
 from siloVerwaltung import SiloVerwaltung
 
 if __name__ == '__main__':
+    silo_verwaltung = SiloVerwaltung
+
     silo_list = []
+    number = 1
+    while number < 3:
+        globals()['silo_%s' % number] = Silo(number, round(random.uniform(80.00, 100.00)))
 
-    silo = Silo(1, 50)
-    silo2 = Silo(2, 100)
-    silo3 = Silo(3, 10)
+        print(f"Silo Nummer: {globals()['silo_%s' % number].get_silonummer()}")
+        print(f"Silo Kapazitat: {globals()['silo_%s' % number].get_kapazitat()}")
+        globals()['silo_%s' % number].einlagern(round(random.uniform(10.00, 80.00)))
+        globals()['silo_%s' % number].einlagern(round(random.uniform(10.00, 80.00)))
+        print(f"Silo Bestand: {globals()['silo_%s' % number].get_bestand()}")
 
-    silo_list.append(silo)
-    silo_list.append(silo2)
-    silo_list.append(silo3)
+        silo_list.append(globals()['silo_%s' % number])
 
-    silo.einlagern(20)
-    silo.einlagern(20)
-
-    silo2.einlagern(20)
-    silo2.einlagern(80)
-
-    silo3.einlagern(5)
-    silo3.einlagern(4)
+        number += 1
 
     siloVerwaltung = SiloVerwaltung(silo_list)
 
