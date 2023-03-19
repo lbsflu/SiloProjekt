@@ -29,7 +29,7 @@ class Silo:
         else:
             print(f" Silo voll. Aktuell kapazitat {aktuell_kapazitat} , menge zu einlagern: {menge}")
 
-    def _set_silonummer(self, silonummer):
+    def _set_silonummer(self, silonummer: int):
         self._silonummer = silonummer
 
     def get_silonummer(self):

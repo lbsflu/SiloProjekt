@@ -23,8 +23,8 @@ if __name__ == '__main__':
 
     siloVerwaltung = SiloVerwaltung(silo_list)
 
-    siloVerwaltung.set_silo_gesamt_kapazitat()
     print(f" Gesamt kapazitat:{siloVerwaltung.get_silo_gesamt_kapazitat()}")
 
-    siloVerwaltung.set_silo_gesamt_bestand()
     print(f" Gesamt bestand:{siloVerwaltung.get_silo_gesamt_bestand()}")
+
+    print(f" Gesamt Silos:{siloVerwaltung.get_silo_total()}")
