@@ -1,19 +1,30 @@
 from silo import Silo
 from siloVerwaltung import SiloVerwaltung
+
 if __name__ == '__main__':
-    silo = Silo(1, 50.0)
+    silo_list = []
 
-    print(silo.einlagern(20.0))
-    print(silo.einlagern(5.0))
-    #print(silo.auslagern(10.0))
+    silo = Silo(1, 50)
+    silo2 = Silo(2, 100)
+    silo3 = Silo(3, 10)
 
+    silo_list.append(silo)
+    silo_list.append(silo2)
+    silo_list.append(silo3)
 
+    silo.einlagern(20)
+    silo.einlagern(20)
 
+    silo2.einlagern(20)
+    silo2.einlagern(80)
 
+    silo3.einlagern(5)
+    silo3.einlagern(4)
 
+    siloVerwaltung = SiloVerwaltung(silo_list)
 
+    siloVerwaltung.set_silo_gesamt_kapazitat()
+    print(f" Gesamt kapazitat:{siloVerwaltung.get_silo_gesamt_kapazitat()}")
 
-
-
-
-
+    siloVerwaltung.set_silo_gesamt_bestand()
+    print(f" Gesamt bestand:{siloVerwaltung.get_silo_gesamt_bestand()}")

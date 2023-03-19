@@ -7,20 +7,16 @@ class SiloVerwaltung:
 
         self._set_silo_list(silo_list)
 
-    def set_silo_gesamt_kapazitat(self, menge):
-        if type(menge) is float:
-            self._silo_gesamt_kapazitat = self._silo_gesamt_kapazitat + menge
-        else:
-            print(f"The number {menge} is not available.")
+    def set_silo_gesamt_kapazitat(self):
+        for silo in self.get_silo_list():
+            self._silo_gesamt_kapazitat += silo.get_kapazitat()
 
-    def get_silo_kapazitat(self) -> float:
+    def get_silo_gesamt_kapazitat(self) -> float:
         return self._silo_gesamt_kapazitat
 
-    def set_silo_gesamt_bestand(self, menge):
-        if type(menge) is float:
-            self._silo_gesamt_bestand = self._silo_gesamt_bestand + menge
-        else:
-            print(f"The number {menge} is not available.")
+    def set_silo_gesamt_bestand(self):
+        for silo in self.get_silo_list():
+            self._silo_gesamt_bestand += silo.get_bestand()
 
     def get_silo_gesamt_bestand(self):
         return self._silo_gesamt_bestand
@@ -30,8 +26,3 @@ class SiloVerwaltung:
 
     def get_silo_list(self):
         return self._silo_list
-
-
-
-
-
