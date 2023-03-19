@@ -1,3 +1,4 @@
+
 class SiloVerwaltung:
     _silo_gesamt_kapazitat = 0.0
     _silo_gesamt_bestand = 0.0
@@ -31,3 +32,7 @@ class SiloVerwaltung:
 
     def get_silo_total(self):
         return len(self.get_silo_liste())
+
+    def get_gultig_kapazitat(self):
+        return self.get_silo_gesamt_kapazitat() - self.get_silo_gesamt_bestand()
+

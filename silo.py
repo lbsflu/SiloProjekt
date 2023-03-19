@@ -48,5 +48,5 @@ class Silo:
         return self._bestand
 
     def __str__(self):
-        return ' Silo (Nummer: ' + str(self.get_silonummer()) + ' kapazitat: ' + str(self.get_kapazitat()) + \
-            ' bestand: ' + str(self.get_bestand()) + ')'
+        return ' [Silonummer: ' + str(self.get_silonummer()) + ' kapazitat: ' + str(self.get_kapazitat()) + \
+            ' bestand: ' + str(self.get_bestand()) + ']'
